@@ -71,7 +71,8 @@ do
             }
     }
     
-
+    Console.WriteLine("Do you want to continue? Please confirm this\ny / n");
+    shouldContinue = Console.ReadLine();
         
 }while(shouldContinue == "y");
     
