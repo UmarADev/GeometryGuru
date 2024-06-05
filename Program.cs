@@ -34,11 +34,44 @@ do
     }
     else if(userChoise == "3")
     {
-        
+        Console.WriteLine("Welcome to the Simple Calculator");
+        Console.WriteLine("Enter the number and operation");
+        string inputNumAndOperation = Console.ReadLine();
+        string[] separators = { " ", "+", "-", "*", "/" };
+        string[] parts = inputNumAndOperation.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+
+        int firstNumber = Convert.ToInt32(parts[0]);
+        int secondNumber = Convert.ToInt32(parts[1]);
+
+        foreach (var operationChar in inputNumAndOperation)
+            {
+                if (operationChar == '-')
+                {
+                    Console.WriteLine($"Result:{firstNumber} - {secondNumber} = {firstNumber - secondNumber}");
+                }
+                else if (operationChar == '+')
+                {
+                    Console.WriteLine($"Result:{firstNumber} + {secondNumber} = {firstNumber + secondNumber}");
+                }
+                else if (operationChar == '*')
+                {
+                    Console.WriteLine($"Result:{firstNumber} * {secondNumber} = {firstNumber * secondNumber}");
+                }
+                else if (operationChar == '/')
+                {
+                    if (secondNumber != 0)
+                    {
+                        Console.WriteLine($"Result:{firstNumber} / {secondNumber} = {firstNumber / secondNumber}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Cannot be divided by ZERO!!!!");
+                    }
+                }
+            }
     }
     
-    Console.WriteLine("Do you want to continue? Please confirm this\ny / n");
-    shouldContinue = Console.ReadLine();
+
         
 }while(shouldContinue == "y");
     
